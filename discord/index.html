@@ -2,11 +2,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Redirects instantly (0 seconds) to the specified URL -->
-    <meta http-equiv="refresh" content="0;url=https://discord.gg/S68ANu2MFe">
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Discord...</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Meta refresh fallback: redirects after 1.5 seconds -->
+    <meta http-equiv="refresh" content="2;url=https://discord.gg/S68ANu2MFe">
+
+    <!-- Same Roblox-like font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0d0e12;
+            --bg-card: #15171d;
+            --border: #1f222a;
+            --text: #ffffff;
+            --text-dim: #9aa1ad;
+            --accent: #5865F2; /* Discord blurple */
+            --accent-hover: #4752c4;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .redirect-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 44px 32px;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-wrap {
+            position: relative;
+            width: 72px;
+            height: 72px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        /* Clean, flat rotating spinner */
+        .spinner {
+            position: absolute;
+            inset: 0;
+            border: 3px solid #1f222a;
+            border-top: 3px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 0.85s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+
+        p {
+            color: var(--text-dim);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .btn-manual {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #20232a;
+            border: 1px solid var(--border);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: background 0.15s ease;
+        }
+
+        .btn-manual:hover {
+            background: #282c35;
+        }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="https://discord.gg/S68ANu2MFe">link</a>.</p>
+
+    <div class="redirect-card">
+        <div class="logo-wrap">
+            <div class="spinner"></div>
+            <img class="logo-img" src="favicon.png" alt="Logo" onerror="this.style.display='none'">
+        </div>
+
+        <h1>Redirecting you to Discord...</h1>
+        <p>You'll be in our server in just a second.</p>
+
+        <a class="btn-manual" href="https://discord.gg/S68ANu2MFe">
+            Click here if you aren't redirected
+        </a>
+    </div>
+
+    <script>
+        // Smooth JavaScript redirect with tiny delay to let user see the screen
+        setTimeout(() => {
+            window.location.href = "https://discord.gg/S68ANu2MFe";
+        }, 1200);
+    </script>
 </body>
 </html>

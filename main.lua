@@ -6,7 +6,7 @@ local WindUI = loadstring(game:HttpGet(
 local placeId = game.PlaceId
 
 local success, message = pcall(function()
-  loadstring('https://raw.githubusercontent.com/revion-hub/revion-hub.github.io/refs/heads/main/'..placeId..'/main.lua')()
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/revion-hub/revion-hub.github.io/refs/heads/main/'..placeId..'/main.lua'))()
 end)
 
 if not success then
